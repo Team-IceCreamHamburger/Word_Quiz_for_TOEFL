@@ -15,8 +15,9 @@ public class GamaManager : MonoBehaviour
 
 
     void Awake() {
+        Debug.Log(Application.persistentDataPath);
         scoreText = GameObject.Find("Score Text").GetComponent<TMP_Text>();
-        progressText = GameObject.Find("Progress Text").GetComponent<TMP_Text>();
+        //progressText = GameObject.Find("Progress Text").GetComponent<TMP_Text>();
         YNText = GameObject.Find("YN Text").GetComponent<TMP_Text>();
         wordDataManager = gameObject.GetComponent<WordDataManager>();
     }
@@ -24,7 +25,7 @@ public class GamaManager : MonoBehaviour
 
     void Start() {
         scoreText.text = "SCORE: 0";
-        progressText.text = "0%";
+        //progressText.text = "0%";
         YNText.text = "START!";
         Debug.Log(Application.persistentDataPath);
         wordDataManager.LoadWord();
